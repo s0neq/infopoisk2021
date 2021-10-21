@@ -94,7 +94,7 @@ def main():
     # 3 bm25
     ians_name, count_vectorizer = bm25_inverse_index(ans, "bm25_vec_ans_matr.pt")
     pickle.dump(count_vectorizer, open("Bm25_vectorizer.pickle", "wb"))
-    iq = inverse_index_ques(q, count_vectorizer, "bm25_vec_q_matr.pt")
+    iq_name = inverse_index_ques(q, count_vectorizer, "bm25_vec_q_matr.pt")
     res['Bm25'] = [ians_name, iq_name, "Bm25_vectorizer.pickle"]
     print('bm25 done')
     with open("file_names.json", "w", encoding="utf8") as f:
